@@ -1,14 +1,9 @@
 package perstore.pet.service;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
 import perstore.pet.common.NotFoundException;
 import perstore.pet.dto.PetCreateRequest;
 import perstore.pet.dto.PetCreateResponse;

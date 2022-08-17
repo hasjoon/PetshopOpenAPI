@@ -23,7 +23,7 @@ public class PetController {
 
     private final PetService petService;
 
-    /***
+    /**
      * 이미 존재하는 펫 정보 업데이트
      */
     @PutMapping("/pet/{id}")
@@ -34,7 +34,7 @@ public class PetController {
 
     /**
      * 새로운 펫 정보를 스토어에 업데이트
-     * */
+     */
     @PostMapping("/pet")
     public ResponseEntity creat(@RequestBody PetCreateRequest petCreateRequest){
         PetCreateResponse newPet = petService.creat(petCreateRequest);
@@ -52,7 +52,7 @@ public class PetController {
 
     /**
      * 펫의 Tags로 조회
-     * */
+     */
     @GetMapping("/pet/findByTags")
     public ResponseEntity getTags(@RequestParam List<String> tags){
         List<PetGetResponse> petTag = petService.getTagsOfPet(tags);
@@ -62,7 +62,7 @@ public class PetController {
 
     /**
      * 펫의 Id로 조회
-     * */
+     */
     @GetMapping("/pet/{id}")
     public ResponseEntity getOne(@PathVariable("id") int id){
         PetGetResponse getOne = petService.getOne(id);
@@ -71,7 +71,7 @@ public class PetController {
 
     /**
      * 폼데이터로 펫 업데이트
-     * */
+     */
     @PostMapping("/pet/{id}")
     public ResponseEntity updatePet(@PathVariable("id") int id, @RequestBody PetCreateRequest petCreateRequest){
         PetCreateResponse updatedPet = petService.updatePet(id, petCreateRequest);
@@ -80,7 +80,7 @@ public class PetController {
 
     /**
      * 펫 삭제
-     **/
+     */
     @DeleteMapping("/pet/{id}")
     public void deletePet(@PathVariable("id") int id){
         petService.deletePet(id);
@@ -89,7 +89,7 @@ public class PetController {
 
     /**
      * 펫 이미지 업데이트
-     * */
+     */
     @PostMapping(value = "/pet/{id}/uploadImage", produces = "application/octet-stream")
     public ResponseEntity uploadImage(@PathVariable("id") int id, @RequestParam("additionalMetadata") String metaData, @RequestBody PetCreateRequest petCreateRequest){
 

@@ -52,7 +52,6 @@ public class Pet {
     private int Is_deleted = 0;
 
 
-
     public static Pet of(int id,String name, Category category, List<Tag> tags, PetStatus status){
 
         return Pet.builder()
